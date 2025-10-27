@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varun - Civil Engineering Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* Use Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Active nav link style */
+        .nav-active {
+            color: #0ea5e9; /* sky-500 */
+            font-weight: 600;
+        }
+
+        /* Scroll-in animation classes */
+        .scroll-fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .scroll-fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Scroll-to-top button styles */
+        #scroll-top-btn {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+            transform: translateY(20px);
+        }
+
+        #scroll-top-btn.is-visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-300 antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-slate-950/90 backdrop-blur-sm shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Brand/Name -->
+            <a href="#home" class="text-2xl font-bold text-slate-100">
+                Varun
+                <span class="text-sky-500">.</span>
+            </a>
+            
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-slate-100" aria-label="Open navigation menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+            
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-8 text-slate-300 font-medium">
+                <li><a href="#home" class="hover:text-sky-500 transition-colors nav-link">Home</a></li>
+                <li><a href="#about" class="hover:text-sky-500 transition-colors nav-link">About</a></li>
+                <li><a href="#experience" class="hover:text-sky-500 transition-colors nav-link">Experience</a></li>
+                <li><a href="#projects" class="hover:text-sky-500 transition-colors nav-link">Projects</a></li>
+                <li><a href="#leadership" class="hover:text-sky-500 transition-colors nav-link">Leadership</a></li>
+                <li><a href="#contact" class="hover:text-sky-500 transition-colors nav-link">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Mobile Menu (Dropdown) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 shadow-lg border-t border-slate-800">
+            <ul class="flex flex-col items-center py-4 space-y-4 text-slate-300 font-medium">
+                <li><a href="#home" class="hover:text-sky-500 transition-colors nav-link-mobile">Home</a></li>
+                <li><a href="#about" class="hover:text-sky-500 transition-colors nav-link-mobile">About</a></li>
+                <li><a href="#experience" class="hover:text-sky-500 transition-colors nav-link-mobile">Experience</a></li>
+                <li><a href="#projects" class="hover:text-sky-500 transition-colors nav-link-mobile">Projects</a></li>
+                <li><a href="#leadership" class="hover:text-sky-500 transition-colors nav-link-mobile">Leadership</a></li>
+                <li><a href="#contact" class="hover:text-sky-500 transition-colors nav-link-mobile">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-[90vh] flex items-center bg-slate-950 py-20">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+                <!-- Hero Text -->
+                <div class="md:w-3/5 text-center md:text-left">
+                    <h1 class="text-4xl md:text-6xl font-bold text-slate-100 leading-tight">
+                        Hi, I'm Varun
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-medium text-sky-500 mt-3">
+                        Civil Engineering Student at DTU
+                    </h2>
+                    <p class="text-lg text-slate-300 mt-6 max-w-xl mx-auto md:mx-0">
+                        A detail-oriented Civil Engineering student passionate about structural analysis and project management. Eager to apply technical knowledge and leadership skills to real-world challenges in the construction and infrastructure sector.
+                    </p>
+                    <!-- Action Buttons -->
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#projects" class="bg-sky-600 text-white font-medium py-3 px-8 rounded-lg shadow-lg shadow-sky-600/20 hover:bg-sky-500 transition-all duration-300 transform hover:-translate-y-0.5">
+                            View My Projects
+                        </a>
+                        <a href="VARUN_DTU.pdf" target="_blank" class="bg-slate-800 text-slate-200 font-medium py-3 px-8 rounded-lg shadow-lg border border-slate-700 hover:bg-slate-700 hover:border-slate-600 transition-all duration-300">
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+                <!-- Hero Image/Placeholder -->
+                <div class="md:w-2/5 mt-10 md:mt-0">
+                    <div class="relative w-full max-w-md mx-auto">
+                        <div class="absolute -inset-1.5 bg-gradient-to-r from-sky-600 to-cyan-400 rounded-lg blur-lg opacity-20"></div>
+                        <img src="Generated Image September 20, 2025 - 1_04AM.jpg" alt="Varun - Profile Photo" class="rounded-lg shadow-2xl w-full relative z-10">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me & Skills Section -->
+        <section id="about" class="py-24 bg-slate-900 scroll-fade-in">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center text-slate-100 mb-16">About Me & Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <!-- About Me -->
+                    <div class="bg-slate-800 p-8 rounded-lg shadow-lg border border-slate-700 hover:border-sky-500 hover:shadow-sky-500/10 transition-all duration-300">
+                        <h3 class="text-xl font-semibold text-sky-500">Who I Am</h3>
+                        <p class="text-slate-300 mt-3">
+                            I am a dedicated B.Tech Civil Engineering student (8.195 CGPA) at Delhi Technological University. My interests extend beyond core engineering to graphic design, programming, and entrepreneurship, giving me a unique blend of analytical and creative problem-solving skills.
+                        </p>
+                    </div>
+                    <!-- Technical Skills -->
+                    <div class="bg-slate-800 p-8 rounded-lg shadow-lg border border-slate-700 hover:border-sky-500 hover:shadow-sky-500/10 transition-all duration-300">
+                        <h3 class="text-xl font-semibold text-sky-500">Technical Skills</h3>
+                        <ul class="space-y-2 text-slate-300 mt-3">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>STAAD Pro (Beginner)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>AutoCAD (Beginner)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>MS Office Suite</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>Canva & Photoshop</li>
+                        </ul>
+                    </div>
+                    <!-- Soft Skills -->
+                    <div class="bg-slate-800 p-8 rounded-lg shadow-lg border border-slate-700 hover:border-sky-500 hover:shadow-sky-500/10 transition-all duration-300">
+                        <h3 class="text-xl font-semibold text-sky-500">Soft Skills</h3>
+                        <ul class="space-y-2 text-slate-300 mt-3">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>Leadership & Teamwork</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>Effective Communication</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>Attention to Detail</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>Event Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-24 bg-slate-950 scroll-fade-in">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center text-slate-100 mb-16">Education</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- B.Tech -->
+                    <div class="bg-slate-800 p-8 rounded-lg shadow-lg border border-slate-700 hover:border-sky-500 hover:shadow-sky-500/10 transition-all duration-300">
+                        <h3 class="text-xl font-semibold text-sky-500">2022 - 2026</h3>
+                        <h4 class="text-lg font-semibold text-slate-100 mt-2">B.Tech (Civil Engineering)</h4>
+                        <p class="text-slate-300 mt-1">Delhi Technological University, New Delhi</p>
+                        <p class="text-slate-100 font-medium mt-3">CGPA: 8.195</p>
+                    </div>
+                    <!-- Class XII -->
+                    <div class="bg-slate-800 p-8 rounded-lg shadow-lg border border-slate-700 hover:border-sky-500 hover:shadow-sky-500/10 transition-all duration-300">
+                        <h3 class="text-xl font-semibold text-sky-500">2021</h3>
+                        <h4 class="text-lg font-semibold text-slate-100 mt-2">CBSE (Class XII)</h4>
+                        <p class="text-slate-300 mt-1">Sarvodaya Bal Vidyalaya, Narela</p>
+                        <p class="text-slate-100 font-medium mt-3">Percentage: 92.2%</p>
+                    </div>
+                    <!-- Class X -->
+                    <div class="bg-slate-800 p-8 rounded-lg shadow-lg border border-slate-700 hover:border-sky-500 hover:shadow-sky-500/10 transition-all duration-300">
+                        <h3 class="text-xl font-semibold text-sky-500">2019</h3>
+                        <h4 class="text-lg font-semibold text-slate-100 mt-2">CBSE (Class X)</h4>
+                        <p class="text-slate-300 mt-1">R. K. Memorial Sr. Sec. School, Sonipat</p>
+                        <p class="text-slate-100 font-medium mt-3">Percentage: 92.4%</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience (Internships) Section -->
+        <section id="experience" class="py-24 bg-slate-900 scroll-fade-in">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center text-slate-100 mb-16">Internships</h2>
+                <div class="max-w-4xl mx-auto space-y-12">
+                    <!-- PWD Internship -->
+                    <div class="flex flex-col md:flex-row gap-8 p-8 bg-slate-800 rounded-lg shadow-lg border border-slate-700 overflow-hidden">
+                        <div class="md:w-1/3">
+                            <h3 class="text-xl font-semibold text-slate-100">Training Intern</h3>
+                            <p class="text-sky-500 font-medium mt-1">Public Work Department, Delhi</p>
+                            <p class="text-slate-400 mt-2">Jun 2025 - Jul 2025</p>
+                        </div>
+                        <div class="md:w-2/3 border-t md:border-t-0 md:border-l border-slate-700 pt-6 md:pt-0 md:pl-8">
+                            <ul class="list-disc list-outside space-y-3 text-slate-300 pl-5">
+                                <li>Conducted site inspections at 5+ government school projects across Delhi NCR.</li>
+                                <li>Executed various quality control tests on concrete mixtures (Setting time, Slump cone, Compressive strength).</li>
+                                <li>Ensured compliance with industry standards and project specifications.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- UV Global Geo Solution Internship -->
+                    <div class="flex flex-col md:flex-row gap-8 p-8 bg-slate-800 rounded-lg shadow-lg border border-slate-700 overflow-hidden">
+                        <div class="md:w-1/3">
+                            <h3 class="text-xl font-semibold text-slate-100">Training Intern</h3>
+                            <p class="text-sky-500 font-medium mt-1">UV Global Geo Solution Pvt. Ltd., Delhi</p>
+                            <p class="text-slate-400 mt-2">Apr 2025 - May 2025</p>
+                        </div>
+                        <div class="md:w-2/3 border-t md:border-t-0 md:border-l border-slate-700 pt-6 md:pt-0 md:pl-8">
+                            <ul class="list-disc list-outside space-y-3 text-slate-300 pl-5">
+                                <li>Gained practical geotechnical experience determining key soil properties.</li>
+                                <li>Conducted Sand Replacement Method, Core Cutter, Calcium Carbide Test, and Pycnometer tests.</li>
+                                <li>Analyzed soil density, water content, and specific gravity.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 bg-slate-950 scroll-fade-in">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center text-slate-100 mb-16">Academic Project</h2>
+                <div class="max-w-4xl mx-auto bg-slate-800 rounded-lg shadow-xl shadow-black/20 overflow-hidden border border-slate-700">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <!-- Project Image Placeholder -->
+                        <div>
+                            <img src="https://placehold.co/600x400/0ea5e9/e2e8f0?text=STAAD+Pro+Project" alt="STAAD Pro G+5 Building Project" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Project Details -->
+                        <div class="p-8 md:p-10">
+                            <h3 class="text-2xl font-semibold text-slate-100">Analysis and Design of G+5 Story Building</h3>
+                            <div class="flex flex-wrap gap-2 mt-4 mb-5">
+                                <span class="bg-sky-500/10 text-sky-400 text-sm font-medium px-3 py-1 rounded-full">STAAD Pro</span>
+                                <span class="bg-slate-700 text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Structural Analysis</span>
+                                <span class="bg-slate-700 text-slate-300 text-sm font-medium px-3 py-1 rounded-full">IS 456-2000</span>
+                            </div>
+                            <ul class="list-disc list-outside space-y-3 text-slate-300 pl-5">
+                                <li>Designed dimensions of beams, slabs, and columns for a G+5 building in STAAD Pro.</li>
+                                <li>Assigned section and material properties to all structural members.</li>
+                                <li>Analyzed the structure by applying dead load, live load, and load combinations as per IS 456-2000.</li>
+                                <li>Factored in the effects of wind and earthquake loads during the analysis.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Section -->
+        <section id="leadership" class="py-24 bg-slate-900 scroll-fade-in">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center text-slate-100 mb-16">Leadership & Responsibility</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Business Bulls -->
+                    <div class="bg-slate-800 p-8 rounded-lg shadow-lg border border-slate-700 hover:border-sky-500 hover:shadow-sky-500/10 transition-all duration-300">
+                        <h3 class="text-2xl font-semibold text-slate-100">Advisor</h3>
+                        <p class="text-sky-500 font-medium mt-1">Business Bulls, DTU</p>
+                        <ul class="list-disc list-outside space-y-3 text-slate-300 pl-5 mt-6">
+                            <li>Organized and led the national-level startup expo "Groove'25", engaging 30+ colleges and 1500+ students.</li>
+                            <li>Drove participation in competitions like Pitch Tank, MindMaze, and Bizignite.</li>
+                            <li>Oversaw planning of webinars/events and managed a design team of 10+ students.</li>
+                        </ul>
+                    </div>
+                    <!-- Assets -->
+                    <div class="bg-slate-800 p-8 rounded-lg shadow-lg border border-slate-700 hover:border-sky-500 hover:shadow-sky-500/10 transition-all duration-300">
+                        <h3 class="text-2xl font-semibold text-slate-100">Head (Design)</h3>
+                        <p class="text-sky-500 font-medium mt-1">Assets - The Finance & Investment Society, DTU</p>
+                        <ul class="list-disc list-outside space-y-3 text-slate-300 pl-5 mt-6">
+                            <li>Headed the Design Department, managing a team of 10+ students.</li>
+                            <li>Designed social media posts, posters, and the official DTU finance magazine, "FinMagzine 2024".</li>
+                            <li>Organized various webinars, events, and competitions for the society.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-slate-800 text-slate-100 scroll-fade-in">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold mb-6">Get In Touch</h2>
+                <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-12">
+                    I am actively seeking internship and full-time opportunities where I can contribute my skills and continue to learn. Feel free to reach out!
+                </p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+                    <!-- Email -->
+                    <a href="mailto:i.varun@hotmail.com" class="flex flex-col items-center text-slate-200 hover:text-sky-500 transition-colors group">
+                        <i data-lucide="mail" class="w-10 h-10 mb-3 transition-transform group-hover:-translate-y-1"></i>
+                        <span class="font-medium">i.varun@hotmail.com</span>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/varun025/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center text-slate-200 hover:text-sky-500 transition-colors group">
+                        <i data-lucide="linkedin" class="w-10 h-10 mb-3 transition-transform group-hover:-translate-y-1"></i>
+                        <span class="font-medium">linkedin.com/in/varun025</span>
+                    </a>
+                    <!-- Phone -->
+                    <a href="tel:+918571050405" class="flex flex-col items-center text-slate-200 hover:text-sky-500 transition-colors group">
+                        <i data-lucide="phone" class="w-10 h-10 mb-3 transition-transform group-hover:-translate-y-1"></i>
+                        <span class="font-medium">+91 8571050405</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top-btn" aria-label="Scroll to top" class="is-visible fixed bottom-6 right-6 bg-sky-600 hover:bg-sky-500 text-white p-3 rounded-full shadow-lg transition-all z-50">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-8">
+        <div class="container mx-auto px-6 text-center text-slate-400">
+            <p>&copy; 2025 Varun. All rights reserved.</p>
+            <p class="text-sm mt-2">Built with Tailwind CSS & Lucide Icons</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.nav-link-mobile');
+        const bodyEl = document.body;
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            bodyEl.classList.toggle('overflow-hidden'); // Prevent bg scroll when menu is open
+            // Toggle icon
+            const icon = menuBtn.querySelector('i');
+            if (icon.getAttribute('data-lucide') === 'menu') {
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons(); // Re-render icon
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                bodyEl.classList.remove('overflow-hidden');
+                const icon = menuBtn.querySelector('i');
+                icon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons(); // Re-render icon
+            });
+        });
+
+        // Intersection Observer for Scroll-in Animations
+        const faders = document.querySelectorAll('.scroll-fade-in');
+        const faderOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const faderObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            });
+        }, faderOptions);
+
+        faders.forEach(fader => {
+            faderObserver.observe(fader);
+        });
+
+        // Intersection Observer for Active Nav Link Highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link'); // Only desktop links
+        const navOptions = {
+            rootMargin: "-40% 0px -60% 0px" // Triggers when section is in the middle 40% of viewport
+        };
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    navLinks.forEach(link => {
+                        link.classList.remove('nav-active');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('nav-active');
+                        }
+                    });
+                }
+            });
+        }, navOptions);
+
+        sections.forEach(section => {
+            navObserver.observe(section);
+        });
+
+        // Scroll to Top Button Logic
+        const scrollTopBtn = document.getElementById('scroll-top-btn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('is-visible');
+            } else {
+                scrollTopBtn.classList.remove('is-visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+    </script>
+</body>
+</html>
+
+
+
